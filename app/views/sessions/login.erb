@@ -1,8 +1,12 @@
 <h1>Log In Below:</h1>
 
+<% if @user == nil %>
+  "Wrong Email/Password!"
+<% end %>
 <form method="post" action="/sessions">
   
   <p><label for="email">Email: </label><input type="text" name="email" id="email"></p>
   <p><label for="password">Password: </label> <input type="text" name="password" id="password"></p>
   <input type="submit" value="Log In" id="submit">
 </form>
+
