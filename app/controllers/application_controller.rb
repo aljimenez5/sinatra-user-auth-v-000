@@ -32,8 +32,10 @@ class ApplicationController < Sinatra::Base
     if @user == nil
       redirect '/sessions/login'
       raise "Incorrect email/password"
-    session[:id] = @user.id
-    redirect '/users/home'
+    else
+      session[:id] = @user.id
+      redirect '/users/home'
+    end
   end
 
   get '/sessions/logout' do 
