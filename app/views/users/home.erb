@@ -1,5 +1,8 @@
+<% if @user == nil %>
+  "Wrong Email/Password!"
+<% else %> 
+  "Welcome, <%=@user.name%>!"
 
-"Welcome, <%=@user.name%>!"
-
-<a href="/sessions/logout">Log Out</a>
+  <a href="/sessions/logout">Log Out</a>
+<%end%>
 
